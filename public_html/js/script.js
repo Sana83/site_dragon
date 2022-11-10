@@ -12,15 +12,6 @@ router.on({
    '/cinematographie' : function() {
        includePage('Page_Cinematographie');
    },
-   '/cinematographie_films_series' : function() {
-       includePage('Page_Cinematographie_Films_Series');
-   },
-   '/cinematographie_voice_actors' : function() {
-       includePage('Page_Cinematographie_Voice_Actors');
-   },
-   '/cinematographie_musiques' : function() {
-       includePage('Page_Cinematographie_Musiques');
-   },
    '/personnages' : function() {
        includePage('Page_Personnages');
    },

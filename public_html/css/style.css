@@ -371,3 +371,15 @@ nav a:hover {
         page-break-after: avoid;
     }
 }
+
+iframe{
+    border-radius:12px;
+    width: 70%;
+    height: 380px;
+}
+
+.musique{
+    display : flex;
+    align-items: center;
+    align-content: center; 
+}

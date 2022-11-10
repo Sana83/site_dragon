@@ -1,7 +1,7 @@
 {
     "name": "site_dragon",
     "version": "1.0.0",
-    "main": "path/to/main.css",
+    "main": "path/to/style.css",
     "ignore": [
         ".jshintrc",
         "**/*.txt"
