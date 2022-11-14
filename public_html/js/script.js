@@ -18,6 +18,10 @@ router.on({
    '/studio' : function() {
        includePage('Page_Studio');
    }
+   ,
+   '/contact' : function() {
+       includePage('Page_Contact');
+   }
 });
 
 // démarre le routeur
