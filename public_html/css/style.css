@@ -17,7 +17,7 @@ body {
     text-decoration: none; 
 }
 
-/*blanc du footer*/
+/*blanc du footer et partie texte du footer*/
 .bouton_footer a{
     color: white;
     text-decoration: none;
@@ -91,3 +91,41 @@ header nav a:hover{
     height: 768px;
     width: 100%;
 }
+
+/*espacement entre les icones footer*/
+.site_officiel,
+.logo_insta,
+.logo_facebook{
+    margin-right: 70px;
+}
+
+/*espacement entre les icones footer 2*/
+.contact{
+    margin-left: 50px;
+}
+
+/*display flex footer*/
+.bouton_footer,
+.reseaux{
+    display: flex;
+}
+
+.logo_twitter{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+}
+
+#barre{
+    height: 10px;
+    
+    border-radius: 0px 50px 50px 0px;
+    position: fixed; 
+    bottom: 0;
+    background: linear-gradient(to right, #f12711, #f5af19)
+}
+
+
