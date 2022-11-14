@@ -1,41 +1,36 @@
-/*police d'ecriture*/
+/*police d'ecriture de toute la page*/
 body {
     font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    margin: 0;
 }
 
-/*footer*/
-.footer-container,
-.main aside {
-    background: black;
-    opacity: 0.8;
-    border-top: 20px solid #e44d26;
-}
-
-/*couleur blanche des elements de la barre de navigation */
-nav a:hover,
-nav a:visited {
-    color: white;
-}
-
-footer a:hover,
-footer a:visited{
-    color: white;
-}
-
-/*Barre du footer*/
+/*disposition barre du footer*/
 .footer-container footer {
     display : flex;
     padding: 20px 0;
     justify-content: space-around;
-    align-items: center;
+    align-items: center; 
+    background: black;
+    opacity: 0.8;
+    border-top: 20px solid #e44d26;
+    color: white;
+    text-decoration: none; 
 }
 
-.bouton_footer{
-    display : contents;
+/*blanc du footer*/
+.bouton_footer a{
+    color: white;
+    text-decoration: none;
 }
 
-.reseaux{
-    display: contents;
+/*taille logo footer*/
+.logo img{
+    width: 8rem;
+}
+
+/*redimmenssionnement logo instagram,facebbok, twitter*/
+.reseaux img{
+    width: 3rem;
 }
 
 /*Affichage musique*/
@@ -52,11 +47,6 @@ iframe{
     align-content: center; 
 }
 
-/*barre de navigation qui disparait quand on scroll
-body{
-  background-color: #f4f4f4;
-}*/
-
 /*tête du site scroll*/
 #header{
   position: fixed;
@@ -64,7 +54,7 @@ body{
   right: 0;
   top: 0;
   background-color: rgba(0,0,0,.8);
-  height: 60px;
+  height: 62px;
   
   transition: top 0.3s;
   transition-delay: 0.2s;
@@ -74,20 +64,30 @@ body{
   top: -80px;
 }
 
-/*redimmenssionnement logo instagram,facebbok, twitter*/
-.reseaux img{
-    width: 3rem;
-}
-
-.logo img{
-    width: 8rem;
-}
-
+/*mise en place de la navbar*/
 .fullNavbar{
     display : flex;
     justify-content: space-between;
 }
 
-body#home {
-    background: #ff0000 url(img/fond_accueil_4.png) repeat scroll 0 0;
+/*parametre de la navbar*/
+header nav a{
+    text-decoration: none;
+    line-height: 60px;
+    color: white;
+    font-size: 22px;
+    transition: backgrounf-color 300ms;
+    padding: 20px 10px;
+}
+
+/*blanc qui apparait sur la nav bar quand on passe dessus*/
+header nav a:hover{
+    background-color: rgba(255,255,255,0.2);
+}
+
+/*background_Accueil*/
+.backgroundAccueil{
+    background-image:url(../img/fond_accueil.png);
+    height: 768px;
+    width: 100%;
 }
