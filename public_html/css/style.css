@@ -52,6 +52,7 @@ iframe{
 
 /*tête du site scroll*/
 #header{
+  z-index:150;
   position: fixed;
   left: 0;
   right: 0;
@@ -113,6 +114,7 @@ header nav a:hover{
     display: flex;
 }
 
+/*insertion logo twitter*/
 .logo_twitter{
     display: flex;
 	flex-direction: row;
@@ -121,6 +123,7 @@ header nav a:hover{
 	align-items: center;
 	align-content: stretch;
 }
+
 
 #barre{
     height: 10px;
@@ -137,10 +140,8 @@ header nav a:hover{
 
 #main-content{
     height: 500vh;
-    background: linear-gradient(#143C66, #e66465);
+    background: linear-gradient(#052A50, #e66465);
 }
-
-
 
 .banner,
 .clouds{
@@ -157,24 +158,10 @@ header nav a:hover{
 .clouds img{
     position: absolute;
     bottom: 0;
+    width: 100%;
     max-width: 100%;
     animation: animate calc(8s * var(--i)) linear infinite;
 }
-
-/*@keyframes animate{
-    0%{
-        opacity: 0;
-        transform: scale(1);
-    }
-    25%,75%{
-        opacity: 1;
-    }
-    100%
-    {
-        opacity: 0;
-        transform: scale(3);
-    }
-}*/
 
 @keyframes animate{
     0%{
@@ -185,9 +172,10 @@ header nav a:hover{
     }
 }
 
-.logo_dragon{
-    
-   position : fixed;   
+.logo_dragon{  
    margin-top: 150px; 
+   margin-left: 100px;
+   position: relative;
+   z-index:50;
 }
 
