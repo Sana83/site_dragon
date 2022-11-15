@@ -4,7 +4,8 @@ const router = new Navigo("/");
 // définition des routes
 router.on({
     '/' : function() {
-       includePage('home');
+       includePage('home', function(){
+       });
    },
    '/dragons' : function() {
        includePage('Page_Dragons');
