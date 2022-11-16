@@ -146,7 +146,7 @@ header nav a:hover{
 .banner,
 .clouds{
     position: absolute;
-    top: 0px;
+    top: -61px;
     left: 0;
     width: 100%;
     height: 100%;
@@ -173,9 +173,66 @@ header nav a:hover{
 }
 
 .logo_dragon{  
-   margin-top: 150px; 
+   margin-top: 243px; 
    margin-left: 100px;
    position: relative;
    z-index:50;
 }
 
+section img#stars{
+    z-index:1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+section img#moon{
+    mix-blend-mode: screen;
+    top: 90px;
+    left: 586px;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+}
+
+section img#krokmou{
+    bottom:  1082px;
+    left: 841px;
+    width: 25%;
+    height: 100%;
+    position: relative;
+    object-fit: cover;
+}
+
+#bouton_accueil{
+    background: transparent;
+    color: #fff;
+    border: 0;
+    font-size: 1.5em;
+    cursor: pointer;
+    position: relative;
+    padding: 16px 50px;
+    transition: all .25s;
+    bottom: 41%;
+    left: 17%;
+}
+
+#bouton_accueil::after, #bouton_accueil::before{
+    border: 3px solid #fff;
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top : 0;
+    left: 0;
+    transition: all .25s;
+}
+
+#bouton_accueil:hover::after{
+    transform: translate(-5px, -5px);
+}
+
+#bouton_accueil:hover::before{
+    transform: translate(5px, 5px);
+}
