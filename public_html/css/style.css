@@ -124,7 +124,7 @@ header nav a:hover{
 	align-content: stretch;
 }
 
-
+/*inseretion de la barre du bas de chargement horizontale*/
 #barre{
     height: 10px;
     border-radius: 0px 50px 50px 0px;
@@ -133,16 +133,13 @@ header nav a:hover{
     background: linear-gradient(to right, #f12711, #f5af19)
 }
 
-.fond_accueil{
-    height: 10px;
-    background: linear-gradient(to right, #f12711, #f5af19)
-}
-
+/*style de chaque page ensemble*/
 #main-content{
     height: 500vh;
     background: linear-gradient(#052A50, #e66465);
 }
 
+/*parametre des nuages*/
 .banner,
 .clouds{
     position: absolute;
@@ -154,15 +151,17 @@ header nav a:hover{
     
 }
 
+/*parametre des nuages2*/
 .banner,
 .clouds img{
     position: absolute;
     bottom: 0;
     width: 100%;
     max-width: 100%;
-    animation: animate calc(8s * var(--i)) linear infinite;
+    animation: animate calc(10s * var(--i)) linear infinite;
 }
 
+/*animation des nuages*/
 @keyframes animate{
     0%{
         transform: translateX(-100%);
@@ -172,6 +171,7 @@ header nav a:hover{
     }
 }
 
+/*insertion du logo dragon page accueil*/
 .logo_dragon{  
    margin-top: 243px; 
    margin-left: 100px;
@@ -179,6 +179,7 @@ header nav a:hover{
    z-index:50;
 }
 
+/*insertion étoiles page accueil*/
 section img#stars{
     z-index:1;
     top: 0;
@@ -187,6 +188,7 @@ section img#stars{
     height: 100%;
 }
 
+/*insertion de la lune page accueil*/
 section img#moon{
     mix-blend-mode: screen;
     top: 90px;
@@ -196,6 +198,7 @@ section img#moon{
     object-fit: cover;
 }
 
+/*insertion krokmou page accueil*/
 section img#krokmou{
     bottom:  1082px;
     left: 841px;
@@ -205,6 +208,7 @@ section img#krokmou{
     object-fit: cover;
 }
 
+/*insertion bouton page accueil*/
 #bouton_accueil{
     background: transparent;
     color: #fff;
@@ -218,6 +222,7 @@ section img#krokmou{
     left: 17%;
 }
 
+/*parametres bouton page accueil*/
 #bouton_accueil::after, #bouton_accueil::before{
     border: 3px solid #fff;
     content:'';
@@ -236,3 +241,9 @@ section img#krokmou{
 #bouton_accueil:hover::before{
     transform: translate(5px, 5px);
 }
+
+/*image de haut de chaque page*/
+.image_studio_haut{
+    width: 100%;
+}
+
