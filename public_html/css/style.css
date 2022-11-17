@@ -249,7 +249,7 @@ section img#krokmou{
     background: rgba(0,0,0,.4);
 }
 
-
+/*insertion table page dragon*/
 /* Style the tab */
 .tab {
   overflow: hidden;
@@ -280,9 +280,21 @@ section img#krokmou{
 
 /* Style the tab content */
 .tabcontent {
+  display: none;
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+}
+
+/*fondu dans les onglets page dragons*/
+.tabcontent {
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 /*positionnement de chaque icone page dragon*/
@@ -299,18 +311,5 @@ section img#krokmou{
     justify-content: space-evenly;
     align-items: center;
 }
-
-
-/*animation du tableau page dragon*/
-.tabcontent {
-  animation: fadeEffect 1s; /* Fading effect takes 1 second */
-}
-
-/* Go from zero to full opacity */
-@keyframes fadeEffect {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
 
 
