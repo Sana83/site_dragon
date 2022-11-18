@@ -157,7 +157,7 @@ function changeTabs(e) {
 }
 
 function openCity(evt, cityName) {
-  // Declare all variables
+  // déclaration des variables
   var i, tabcontent, tablinks;
 
   // Get all elements with class="tabcontent" and hide them
@@ -176,5 +176,6 @@ function openCity(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
+
 
 

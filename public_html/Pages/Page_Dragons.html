@@ -1,137 +1,138 @@
-<!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
+<body>
         <img class="image_studio_haut" src="img/Main_Dragons2.png">
-        
-<!--        <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-            <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-            <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-        </div>-->
-<!--        <div id="London" class="tabcontent">
-            <p class="description description-all-heroes">Overwatch met en avant de puissants héros 
-                internationaux aux personnalités et origines captivantes. 
-                Découvrez cette impressionnante distribution plus en détails.</p>
-            <ul>
-            <li class="character-item">
-                <div class="character-container">
-                    <a href="/">
-                        <figure class="thumbnail">
-                            <img src="/img/krokmou_dragon" alt="le nom du personnage">
-                        </figure></a> 
-                    <a href="/">
-                        <div class="text"><span><font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Krokmou</font>   
-                                </font>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            </ul>
-            <ul>
-            <li class="character-item">
-                <div class="character-container">
-                    <a href="/">
-                        <figure class="thumbnail">
-                            <img src="/img/tempete_dragon" alt="le nom du personnage">
-                        </figure></a> 
-                    <a href="/">
-                        <div class="text"><span><font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Krokmou</font>   
-                                </font>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            </ul>  
-        </div>-->
 
-<!--        <div id="Paris" class="tabcontent">
-            <h3>Paris</h3>
-            <p>Paris is the capital of France.</p>
-        </div>
-
-        <div id="Tokyo" class="tabcontent">
-            <h3>Tokyo</h3>
-            <p>Tokyo is the capital of Japan.</p>
-        </div>-->
-        <!-- Tab links -->
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-  <button class="tablinks" onclick="openCity(event, 'usa')">usa</button>
+  <button class="tablinks" onclick="openCity(event, 'Main_Dragons')" id="defaultOpen">Principaux Dragons</button>
+  <button class="tablinks" onclick="openCity(event, 'Attaque')">Classe Attaque</button>
+  <button class="tablinks" onclick="openCity(event, 'Stocker')">Classe Stocker</button>
+  <button class="tablinks" onclick="openCity(event, 'Boulder')">Classe Boulder</button>
+  <button class="tablinks" onclick="openCity(event, 'Traqueur')">Classe Traqueur</button>
+  <button class="tablinks" onclick="openCity(event, 'Sharp')">Classe Sharp</button>
+  <button class="tablinks" onclick="openCity(event, 'Marees')">Classe Marées</button>
+  <button class="tablinks" onclick="openCity(event, 'Mystere')">Classe Mystère</button>
+  <button class="tablinks" onclick="openCity(event, 'Alpha')">Alpha</button>
 </div>
 
 <!-- Tab content -->
-            <div id="London" class="tabcontent">
-              <p class="description description-all-heroes">Les dragons de classe 
+            <div id="Main_Dragons" class="tabcontent">
+              <p class="description_dragon">Les dragons de classe 
                   Strike se caractérisent par leur "vitesse fulgurante, leur force de 
                   mâchoire semblable à celle d'un étau et leur intelligence extrême", 
                   ainsi que par une précision extrême, des attaques puissantes, une puissance 
                   de feu explosive et une capacité unique à leur permettre de naviguer dans leurs 
                   environnements/atmosphère respectifs. Les dragons de cette classe sont parmi les 
                   plus rares de tous les dragons, et certains sont proches de l'extinction. 
-                  Ils sont aussi les plus difficiles à dresser mais les plus fidèles une fois dressés, 
-                  ils font aussi généralement partie des dragons les plus puissants. Les dragons inclus sont :</p>
-            <ul>
+                  Ils sont aussi les plus difficiles à dresser mais les plus fidèles une fois 
+                  dressés, ils font aussi généralement partie des dragons les plus puissants. 
+                  Les dragons inclus sont :
+              </p>
+            <ul class="affichage_dragon">
             <li class="character-item">
                 <div class="character-container">
                     <a href="/">
                         <figure class="thumbnail">
-                            <img src="/img/krokmou_dragon" alt="le nom du personnage">
+                            <img src="/img/krokmou_dragon" alt="krokmou">
                         </figure></a> 
                     <a href="/">
-                        <div class="text"><span><font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Krokmou</font>   
-                                </font>
-                            </span>
+                        <div class="text_dragon">
+                            <p>Krokmou</p>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="character-item">
+                <div class="character-container">
+                    <a href="/">
+                        <figure class="thumbnail">
+                            <img src="/img/tempete_dragon" alt="tempete">
+                        </figure></a> 
+                    <a href="/">
+                        <div class="text_dragon">
+                            <p>Tempête</p>    
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="character-item">
+                <div class="character-container">
+                    <a href="/">
+                        <figure class="thumbnail">
+                            <img src="/img/prout_dragon" alt="prout">
+                        </figure></a> 
+                    <a href="/">
+                        <div class="text_dragon">
+                            <p>Prout et Pète</p>
                         </div>
                     </a>
                 </div>
             </li>
             </ul>
-            <ul>
+            <ul class="affichage_dragon">
             <li class="character-item">
                 <div class="character-container">
                     <a href="/">
                         <figure class="thumbnail">
-                            <img src="/img/tempete_dragon" alt="le nom du personnage">
+                            <img src="/img/bouledogre_dragon" alt="bouledogre">
                         </figure></a> 
                     <a href="/">
-                        <div class="text"><span><font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Krokmou</font>   
-                                </font>
-                            </span>
+                        <div class="text_dragon">
+                            <p>Bouledogre</p>
                         </div>
                     </a>
                 </div>
             </li>
-            </ul>  
+            <li class="character-item">
+                <div class="character-container">
+                    <a href="/">
+                        <figure class="thumbnail">
+                            <img src="/img/crochefer_dragon" alt="crochefer">
+                        </figure></a> 
+                    <a href="/">
+                        <div class="text_dragon">
+                            <p>Crochefer</p>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            </ul>
             </div>
 
-            <div id="Paris" class="tabcontent">
+            <div id="Attaque" class="tabcontent">
+                
               <h3>Paris</h3>
               <p>Paris is the capital of France.</p>
             </div>
 
-            <div id="Tokyo" class="tabcontent">
+            <div id="Stocker" class="tabcontent">
+              <h3>Paris</h3>
+              <p>Paris is the capital of France.</p>
+            </div>
+
+            <div id="Boulder" class="tabcontent">
               <h3>Tokyo</h3>
               <p>Tokyo is the capital of Japan.</p>
             </div>
 
-            <div id="usa" class="tabcontent">
+            <div id="Traqueur" class="tabcontent">
+              <h3>usa</h3>
+              <p>usa is the capital of Japan.</p>
+            </div>
+             <div id="Sharp" class="tabcontent">
+              <h3>Paris</h3>
+              <p>Paris is the capital of France.</p>
+            </div>
+
+            <div id="Marees" class="tabcontent">
+              <h3>Tokyo</h3>
+              <p>Tokyo is the capital of Japan.</p>
+            </div>
+
+            <div id="Mystere" class="tabcontent">
+              <h3>usa</h3>
+              <p>usa is the capital of Japan.</p>
+            </div>
+            
+            <div id="Alpha" class="tabcontent">
               <h3>usa</h3>
               <p>usa is the capital of Japan.</p>
             </div>
