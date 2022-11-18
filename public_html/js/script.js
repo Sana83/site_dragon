@@ -1,3 +1,5 @@
+const urlGoogleSheetDatas = "https://script.google.com/macros/s/AKfycbwci223-ImWEK3y_xrb_O2Q-Es20qBQXbT1B2fxSxT5ZhwXi3eqm0e-Br-nv0CA_ouw5Q/exec";
+const urlGoogleSheetDragon ="https://script.google.com/macros/s/AKfycbz_TUKEgOUF2S-HnIQZVoWAx66Zy45LgNeaCFSmXti7QObPCMB7I_4_rM03ak7474hGGA/exec";
 // création d'une instance de la class Navigo
 const router = new Navigo("/");
 
@@ -20,11 +22,54 @@ router.on({
    },
    '/studio' : function() {
        includePage('Page_Studio');
-   }
-   ,
+   },
    '/contact' : function() {
-       includePage('Page_Contact');
-   }
+   includePage('Page_Contact', function() {
+       // ajout d'un écouteur d'événement sur le formulaire lors du submit
+       document.getElementById('contactForm').addEventListener('submit', function (e) {
+           // empêche le formulaire de reactualiser la page
+           e.preventDefault();
+           // envoyer le formulaire
+           validateFormOnSubmit(this);
+       });
+   });
+},
+   '/Page_Dragon_Caracteristiques' : function() {
+       includePage('Page_Dragon_Caracteristiques', function(){
+            // création d'une requête ajax
+            xhttp = new XMLHttpRequest();
+            // définition de la fonction de callback
+            xhttp.onreadystatechange = function () {
+            // si la requête est terminée
+            if (this.readyState === 4) {
+                // si la requête est un succès
+                if (this.status === 200) {
+                    console.log(JSON.parse(this.responseText));
+                    
+                    let template = document.getElementById("templateDragons");
+                    let listDatas = document.getElementById("listDatas");
+                    let reponse = JSON.parse(this.responseText);
+                    
+                    for (let data of reponse.datas){
+                        let node = template.content.cloneNode(true);
+                        
+                        node.querySelector('h2').innerHTML = data.colonne1;
+                        node.querySelector('.colonne2').innerHTML = data.colonne2;
+                        node.querySelector('.colonne3').innerHTML = data.colonne3; 
+                        
+                        listDatas.appendChild(node);
+                        
+                    }
+                }else{
+                    console.error(this.status, this.responseText);
+                
+                }
+                }
+            };
+            xhttp.open("GET", urlGoogleSheetDragon, true);
+            xhttp.send();
+        });
+    }
 });
 
 // démarre le routeur
@@ -175,6 +220,46 @@ function openCity(evt, cityName) {
   // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
+}
+
+
+
+
+function validateFormOnSubmit(form) {
+
+   console.log(form.nom.value);
+
+   // désactive le bouton submit
+   form.submitBtn.disabled = true;
+
+   // récupération de la zone de message de feedback
+   let alert = document.getElementById('alertRepForm');
+
+   // création d'une requête ajax
+   xhttp = new XMLHttpRequest();
+   // définition de la fonction de callback
+   xhttp.onreadystatechange = function () {
+       // si la requête est terminée
+       if (this.readyState === 4) {
+           // désactive le bouton submit
+           form.submitBtn.disabled = false;
+           // si la requête est un succès
+           if (this.status === 200) {
+               // affiche le contenu du fichier html dans #main-content
+               alert.innerHTML = JSON.parse(this.responseText).result;
+               // réinitialiser le formulaire
+               form.reset();
+           }
+           // si la requête est un échec
+           else {
+               alert.innerHTML = "Error: " + this.status;
+           }
+       }
+   };
+   // definition de l'adresse du fichier html à charger
+   xhttp.open("POST", urlGoogleSheetDatas, true);
+   // envoie la requête
+   xhttp.send(new FormData(form));
 }
 
 

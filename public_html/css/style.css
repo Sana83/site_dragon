@@ -79,6 +79,11 @@ iframe{
     justify-content: space-between;
 }
 
+/*.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
 /*parametre de la navbar*/
 header nav a{
     text-decoration: none;
@@ -223,8 +228,9 @@ section img#krokmou{
     position: relative;
     padding: 16px 50px;
     transition: all .25s;
-    bottom: 41%;
+    bottom: 17%;
     left: 17%;
+    position: absolute;
 }
 
 /*parametres bouton page accueil*/
