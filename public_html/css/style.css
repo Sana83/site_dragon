@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
 /*paramètres de la page + police d'ecriture'*/
 body{
     font: 16px/26px Helvetica, Helvetica Neue, Arial;
@@ -63,7 +69,7 @@ iframe{
   right: 0;
   top: 0;
   background-color: rgba(0,0,0,.8);
-  height: 62px;
+  width: 100%;
   
   transition: top 0.3s;
   transition-delay: 0.2s;
@@ -345,4 +351,11 @@ section img#krokmou{
     -ms-transform: scale(1.3); /* IE 9 */
     -webkit-transform: scale(1.3); /* Safari 3-8 */
     transform: scale(1.3);
+}
+
+@media screen and (max-width: 900px){
+    .fullNavbar{
+        display: none;
+        
+    }
 }
