@@ -153,6 +153,7 @@ header nav a:hover{
 #main-content{
 /*    height: 500vh;*/
     background: linear-gradient(#052A50, #e66465);
+    
 }
 
 /*parametre des nuages*/
@@ -355,4 +356,43 @@ section img#krokmou{
         display: none;
         
     }
+}
+
+
+
+/*image qui bouge de gauche à droite - page accueil*/
+.snip1325 {
+  position: absolute;
+  overflow: hidden;
+  margin: 3%;
+  min-width: 50%;
+  max-width: 54%;
+  height: 70%;
+  width: 100%;
+  top: 150%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+.snip1325 img {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  -webkit-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+}
+.snip1325:hover img,
+.snip1325.hover img {
+  -webkit-transform: translateX(130px);
+  transform: translateX(130px);
+}
+
+
+.text_studio_page_accueil{
+    position: absolute;
+    overflow: hidden;
+  margin: 3%;
+  min-width: 50%;
+  max-width: 54%;
+  height: 70%;
+  width: 100%;
+  top: 150%;
 }
