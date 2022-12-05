@@ -1,5 +1,5 @@
 const urlGoogleSheetDatas = "https://script.google.com/macros/s/AKfycbwci223-ImWEK3y_xrb_O2Q-Es20qBQXbT1B2fxSxT5ZhwXi3eqm0e-Br-nv0CA_ouw5Q/exec";
-const urlGoogleSheetDragon ="https://script.google.com/macros/s/AKfycbzZf7FpsHssWBS_jzbH7-KqdSC5ZzXRZiZgyoBUk1ySxpoJo1vVkurt7SFbS9ojmmpH/exec";
+const urlGoogleSheetDragon ="https://script.google.com/macros/s/AKfycbyTdwFtaFRaf84w73Ywip7HLrw55FqZRaZgR9q9LiV8KuRxKfLqTvU5lZB-SOx8htNGTw/exec";
 // création d'une instance de la class Navigo
 const router = new Navigo("/");
 
@@ -58,9 +58,9 @@ router.on({
                         let node = template.content.cloneNode(true);
                         
                         //affectation des données dans la copie du template
-                        node.querySelector('h2').innerHTML = data.colonne1;
-                        node.querySelector('.colonne2').innerHTML = data.colonne2;
-                        node.querySelector('.colonne3').innerHTML = data.colonne3; 
+                        node.querySelector('h2').innerHTML = data.dragon;
+                        node.querySelector('.colonne2').innerHTML = data.image;
+                        node.querySelector('.colonne3').innerHTML = data.texte; 
                         
                         // ajout de la copie du template dans la zone d'affichage des données
                         listDatas.appendChild(node);

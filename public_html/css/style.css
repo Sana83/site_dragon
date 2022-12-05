@@ -231,10 +231,9 @@ section img#krokmou{
     border: 0;
     font-size: 1.5em;
     cursor: pointer;
-    position: relative;
-    padding: 16px 50px;
+    padding: 1.3% 5%;
     transition: all .25s;
-    bottom: 17%;
+    bottom: 12%;
     left: 17%;
     position: absolute;
 }
@@ -262,8 +261,6 @@ section img#krokmou{
 /*image de haut de chaque page*/
 .image_studio_haut{
     width: 100%;
-    height: 16%;
-    background: rgba(0,0,0,.4);
 }
 
 /*insertion table page dragon*/
