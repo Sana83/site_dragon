@@ -217,10 +217,10 @@ section img#moon{
 
 /*insertion krokmou page accueil*/
 section img#krokmou{
-    bottom: -43vh;
-    left: 101vh;
-    width: 51%;
-    height: 100%;
+    top: 11%;
+    left: 51%;
+    width: 49%;
+    height: 93%;
     position: absolute;
     object-fit: cover;
 }
@@ -352,6 +352,7 @@ section img#krokmou{
     transform: scale(1.3);
 }
 
+/*reponsive*/
 @media screen and (max-width: 900px){
     .fullNavbar{
         display: none;
@@ -443,7 +444,45 @@ section img#krokmou{
   transform: translateX(130px);
 }
 
+.snip4 {
+    position: absolute;
+    overflow: hidden;
+    margin: 3%;
+    min-width: 50%;
+    max-width: 54%;
+    height: 70%;
+    width: 100%;
+    top: 390%;
+    margin-left: 43%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}   
+
+.snip4 img {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  -webkit-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+}
+
+.snip4:hover img,
+.snip4.hover img {
+  -webkit-transform: translateX(130px);
+  transform: translateX(130px);
+}
+
+
 /*texte studio page accueil*/
-.text_studio_page_accueil{
-   
+.texte_studio_accueil{
+    position: absolute;
+    margin-left: 62%;
+    top: 161%;
+}
+
+.titre_accueil{
+    position: absolute;
+    top: 120%;
+    color: wheat;
+    text-align: center;
+    margin-left: 1%;
 }

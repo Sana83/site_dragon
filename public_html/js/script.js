@@ -62,8 +62,7 @@ router.on({
                         node.querySelector(".image_dragon").setAttribute("src",data.image);
                         node.querySelector('.colonne3').innerHTML = data.texte; 
                         // ajout de la copie du template dans la zone d'affichage des données
-                        listDatas.appendChild(node);
-                        
+                        listDatas.appendChild(node); 
                     }
                 }else{
                     console.error(this.status, this.responseText);
