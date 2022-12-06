@@ -217,11 +217,11 @@ section img#moon{
 
 /*insertion krokmou page accueil*/
 section img#krokmou{
-    bottom: 179vh;
-    left: 139vh;
-    width: 25%;
+    bottom: -43vh;
+    left: 101vh;
+    width: 51%;
     height: 100%;
-    position: relative;
+    position: absolute;
     object-fit: cover;
 }
 
@@ -235,7 +235,7 @@ section img#krokmou{
     padding: 1.3% 5%;
     transition: all .25s;
     bottom: 12%;
-    left: 17%;
+    left: 16%;
     position: absolute;
 }
 
@@ -361,38 +361,88 @@ section img#krokmou{
 
 
 /*image qui bouge de gauche à droite - page accueil*/
-.snip1325 {
-  position: absolute;
-  overflow: hidden;
-  margin: 3%;
-  min-width: 50%;
-  max-width: 54%;
-  height: 70%;
-  width: 100%;
-  top: 150%;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-}
-.snip1325 img {
+.snip1 {
+    position: absolute;
+    overflow: hidden;
+    margin: 3%;
+    min-width: 50%;
+    max-width: 54%;
+    height: 70%;
+    width: 100%;
+    top: 150%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}   
+
+.snip1 img {
   height: 100%;
   position: absolute;
   right: 0;
   -webkit-transition: all 2s ease-out;
   transition: all 2s ease-out;
 }
-.snip1325:hover img,
-.snip1325.hover img {
+
+.snip1:hover img,
+.snip1.hover img {
   -webkit-transform: translateX(130px);
   transform: translateX(130px);
 }
 
 
-.text_studio_page_accueil{
+.snip2 {
     position: absolute;
     overflow: hidden;
-  margin: 3%;
-  min-width: 50%;
-  max-width: 54%;
-  height: 70%;
-  width: 100%;
-  top: 150%;
+    margin: 3%;
+    min-width: 50%;
+    max-width: 54%;
+    height: 70%;
+    width: 100%;
+    top: 230%;
+    margin-left: 43%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}   
+
+.snip2 img {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  -webkit-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+}
+
+.snip2:hover img,
+.snip2.hover img {
+  -webkit-transform: translateX(130px);
+  transform: translateX(130px);
+}
+
+.snip3 {
+    position: absolute;
+    overflow: hidden;
+    margin: 3%;
+    min-width: 50%;
+    max-width: 54%;
+    height: 70%;
+    width: 100%;
+    top: 310%;
+    margin-left: 3%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}   
+
+.snip3 img {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  -webkit-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+}
+
+.snip3:hover img,
+.snip3.hover img {
+  -webkit-transform: translateX(130px);
+  transform: translateX(130px);
+}
+
+/*texte studio page accueil*/
+.text_studio_page_accueil{
+   
 }
