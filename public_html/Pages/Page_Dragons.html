@@ -1,37 +1,38 @@
 <body>
-        <img class="image_studio_haut" src="img/Main_Dragons2.png">
+    <img class="image_studio_haut" src="img/Main_Dragons2.png">
 
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'Main_Dragons')" id="defaultOpen">Principaux Dragons</button>
-  <button class="tablinks" onclick="openCity(event, 'Attaque')">Classe Attaque</button>
-  <button class="tablinks" onclick="openCity(event, 'Stocker')">Classe Stocker</button>
-  <button class="tablinks" onclick="openCity(event, 'Boulder')">Classe Boulder</button>
-  <button class="tablinks" onclick="openCity(event, 'Traqueur')">Classe Traqueur</button>
-  <button class="tablinks" onclick="openCity(event, 'Sharp')">Classe Sharp</button>
-  <button class="tablinks" onclick="openCity(event, 'Marees')">Classe Marées</button>
-  <button class="tablinks" onclick="openCity(event, 'Mystere')">Classe Mystère</button>
-  <button class="tablinks" onclick="openCity(event, 'Alpha')">Alpha</button>
-</div>
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'Main_Dragons')" id="defaultOpen">Principaux Dragons</button>
+        <button class="tablinks" onclick="openCity(event, 'Attaque')">Classe Attaque</button>
+        <button class="tablinks" onclick="openCity(event, 'Stocker')">Classe Stocker</button>
+        <button class="tablinks" onclick="openCity(event, 'Boulder')">Classe Boulder</button>
+        <button class="tablinks" onclick="openCity(event, 'Traqueur')">Classe Traqueur</button>
+        <button class="tablinks" onclick="openCity(event, 'Sharp')">Classe Sharp</button>
+        <button class="tablinks" onclick="openCity(event, 'Marees')">Classe Marées</button>
+        <button class="tablinks" onclick="openCity(event, 'Mystere')">Classe Mystère</button>
+        <button class="tablinks" onclick="openCity(event, 'Alpha')">Alpha</button>
+    </div>
 
-<!-- Tab content -->
-            <div id="Main_Dragons" class="tabcontent">
-              <p class="description_dragon">Les dragons de classe 
-                  Strike se caractérisent par leur "vitesse fulgurante, leur force de 
-                  mâchoire semblable à celle d'un étau et leur intelligence extrême", 
-                  ainsi que par une précision extrême, des attaques puissantes, une puissance 
-                  de feu explosive et une capacité unique à leur permettre de naviguer dans leurs 
-                  environnements/atmosphère respectifs. Les dragons de cette classe sont parmi les 
-                  plus rares de tous les dragons, et certains sont proches de l'extinction. 
-                  Ils sont aussi les plus difficiles à dresser mais les plus fidèles une fois 
-                  dressés, ils font aussi généralement partie des dragons les plus puissants. 
-                  Les dragons inclus sont :
-              </p>
-            <ul class="affichage_dragon">
+    <!-- Tab content -->
+    <div id="Main_Dragons" class="tabcontent">
+        <p class="description_dragon">Les dragons de classe 
+            Strike se caractérisent par leur "vitesse fulgurante, leur force de 
+            mâchoire semblable à celle d'un étau et leur intelligence extrême", 
+            ainsi que par une précision extrême, des attaques puissantes, une puissance 
+            de feu explosive et une capacité unique à leur permettre de naviguer dans leurs 
+            environnements/atmosphère respectifs. Les dragons de cette classe sont parmi les 
+            plus rares de tous les dragons, et certains sont proches de l'extinction. 
+            Ils sont aussi les plus difficiles à dresser mais les plus fidèles une fois 
+            dressés, ils font aussi généralement partie des dragons les plus puissants. 
+            Les dragons inclus sont :
+        </p>
+<!--        <ul class="affichage_dragon">
             <li class="character-item">
                 <div class="character-container">
                     <a href="/Page_Dragon_Caracteristiques">
                         <figure class="thumbnail">
                             <img src="/img/krokmou_dragon" alt="krokmou">
+
                         </figure></a> 
                     <a href="/Page_Dragon_Caracteristiques">
                         <div class="text_dragon">
@@ -66,8 +67,8 @@
                     </a>
                 </div>
             </li>
-            </ul>
-            <ul class="affichage_dragon">
+        </ul>
+        <ul class="affichage_dragon">
             <li class="character-item">
                 <div class="character-container">
                     <a href="/Page_Dragon_Caracteristiques">
@@ -93,53 +94,115 @@
                         </div>
                     </a>
                 </div>
+            </li>-->
+        <ul>
+            <li>
+                <!-- Button trigger modal -->
+                <button type="button" id="btnmodal" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Launch demo modal
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" id="btnmodalClose" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+<!--                            <div class="modal-footer">
+                                <button type="button" id="btnmodalClose" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" id="btnmodalClose" class="btn btn-primary">Save changes</button>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
             </li>
-            </ul>
-            </div>
-
-            <div id="Attaque" class="tabcontent">
+            <li> <p>caractéristique dragons</p><!-- comment -->
+        <template id="templateDragons">
+            <div class='dragon_click'>
+                <img class="image_dragon">
+                <h2 class="dragon"></h2>
                 
-              <h3>Paris</h3>
-              <p>Paris is the capital of France.</p>
             </div>
+        </template>
+        <div id="listDatas"></div></li>
+        </ul>
+    </div>
 
-            <div id="Stocker" class="tabcontent">
-              <h3>Paris</h3>
-              <p>Paris is the capital of France.</p>
-            </div>
+    <div id="Attaque" class="tabcontent">
 
-            <div id="Boulder" class="tabcontent">
-              <h3>Tokyo</h3>
-              <p>Tokyo is the capital of Japan.</p>
-            </div>
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p>
+    </div>
 
-            <div id="Traqueur" class="tabcontent">
-              <h3>usa</h3>
-              <p>usa is the capital of Japan.</p>
-            </div>
-             <div id="Sharp" class="tabcontent">
-              <h3>Paris</h3>
-              <p>Paris is the capital of France.</p>
-            </div>
+    <div id="Stocker" class="tabcontent">
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p>
+    </div>
 
-            <div id="Marees" class="tabcontent">
-              <h3>Tokyo</h3>
-              <p>Tokyo is the capital of Japan.</p>
-            </div>
+    <div id="Boulder" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
 
-            <div id="Mystere" class="tabcontent">
-              <h3>usa</h3>
-              <p>usa is the capital of Japan.</p>
-            </div>
-            
-            <div id="Alpha" class="tabcontent">
-              <h3>usa</h3>
-              <p>usa is the capital of Japan.</p>
-            </div>
+    <div id="Traqueur" class="tabcontent">
+        <h3>usa</h3>
+        <p>usa is the capital of Japan.</p>
+    </div>
+    <div id="Sharp" class="tabcontent">
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p>
+    </div>
 
-            <section>
-            <img src="img/stars" data-speed="-5" id="stars">
-            <img src="img/stars" data-speed="-5" id="stars"> 
-        </section>
-    </body>
+    <div id="Marees" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+
+    <div id="Mystere" class="tabcontent">
+        <h3>usa</h3>
+        <p>usa is the capital of Japan.</p>
+    </div>
+
+    <div id="Alpha" class="tabcontent">
+        <h3>usa</h3>
+        <p>usa is the capital of Japan.</p>
+    </div>
+
+<!--    <div class="projet">
+        <div id="listDatas">
+        </div>
+        <template id="templateDragons">
+            <div class="Popup">
+                <button class="btnPopup">
+                    <div>
+                        <h3 class="dragon"></h3>
+                    </div>
+                </button>
+
+                <div class="overlay">
+                    <div class="popup">
+                        <div>
+                            <div>
+                                <p class="colonne2"></p>
+                                <p class="colonne3"></p>
+                                <img class="image_dragon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>-->
+    <section>
+        <img src="img/stars" data-speed="-5" id="stars">
+        <img src="img/stars" data-speed="-5" id="stars"> 
+    </section>
+</body>
 </html>

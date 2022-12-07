@@ -10,8 +10,70 @@ router.on({
        });
    },
    '/dragons' : function() {
-       includePage('Page_Dragons', function(){
+       includePage('Page_Dragons', () => {
            document.getElementById("defaultOpen").click();
+           
+           // création d'une requête ajax
+            xhttp = new XMLHttpRequest();
+            // définition de la fonction de callback
+            xhttp.onreadystatechange = function () {
+            // si la requête est terminée
+            if (this.readyState === 4) {
+                // si la requête est un succès
+                if (this.status === 200) {
+                    console.log(JSON.parse(this.responseText));
+                    //récupération du template
+                    let template = document.getElementById("templateDragons");
+                    //récupération de la zone d'affichage des données
+                    let listDatas = document.getElementById("listDatas");
+                    //récupération des données
+                    let reponse = JSON.parse(this.responseText);
+                    
+                    //pour chaque ligne de données
+                    for (let data of reponse.datas){
+                        //création d'une copie du template
+                        let node = template.content.cloneNode(true);
+                        
+                        //affectation des données dans la copie du template
+                        node.querySelector('.dragon').innerHTML = data.dragon; 
+                        node.querySelector(".image_dragon").setAttribute("src",data.image);
+                        let btnmodal=node.querySelector('.dragon_click');
+                        
+//                        btnmodal.addEventListener('click', function () {
+//                            myModal.show();
+//                        }, false);
+//                        
+                        btnmodal.addEventListener('click', function () {
+                            myModal.show(dragon_click);
+                        });
+//                        let btnPopup =node.querySelector('.btnPopup');
+//                        let overlay = node.querySelector('.overlay');
+//                        btnPopup.addEventListener('click', function(){
+//                            openModal(overlay);
+//                        });
+                        // ajout de la copie du template dans la zone d'affichage des données
+                        listDatas.appendChild(node); 
+                    }
+                }else{
+                    console.error(this.status, this.responseText);
+                }
+                }
+            };
+            xhttp.open("GET", urlGoogleSheetDragon, true);
+            xhttp.send();
+        
+           let myModal = new bootstrap.Modal(document.getElementById('myModal'), {
+                keyboard: false
+            });
+            
+            document.getElementById('btnmodal').addEventListener('click', function () {
+                myModal.show();
+            }, false)
+            
+            document.getElementById('btnmodalClose').addEventListener('click', function () {
+                myModal.hide();
+            }, false);
+            
        });
    },
    '/cinematographie' : function() {
@@ -21,7 +83,15 @@ router.on({
        includePage('Page_Personnages');
    },
    '/studio' : function() {
-       includePage('Page_Studio');
+       includePage('Page_Studio', () => {
+           let myModal = new bootstrap.Modal(document.getElementById('myModal'), {
+                keyboard: false
+            });
+
+            document.getElementById('btnmodal').addEventListener('click', function () {
+                myModal.show();
+            }, false);
+        });
    },
    '/contact' : function() {
    includePage('Page_Contact', function() {
@@ -66,7 +136,6 @@ router.on({
                     }
                 }else{
                     console.error(this.status, this.responseText);
-                
                 }
                 }
             };
@@ -129,19 +198,19 @@ document.addEventListener('scroll',() => {
     }
     lastScrollValue = top;
 });
-
-//barre de scroll
-window.onload = () => {
-    window.addEventListener("scroll", () => {
-       let hauteur = document.documentElement.scrollHeight - window.innerHeight;
-       let position = window.scrollY;
-       let largeur = document.documentElement.clientWidth;
-       
-       let barre = (position / hauteur) * largeur;
-       
-       document.getElementById("barre").style.widht = barre + "px";
-    });
-};
+//
+////barre de scroll
+//window.onload = () => {
+//    window.addEventListener("scroll", () => {
+//       let hauteur = document.documentElement.scrollHeight - window.innerHeight;
+//       let position = window.scrollY;
+//       let largeur = document.documentElement.clientWidth;
+//       
+//       let barre = (position / hauteur) * largeur;
+//       
+//       document.getElementById("barre").style.widht = barre + "px";
+//    });
+//};
 
 window.addEventListener("DOMContentLoaded", () => {
   const tabs = document.querySelectorAll('[role="tab"]');
@@ -269,8 +338,20 @@ function validateFormOnSubmit(form) {
 
 
 /* Demo purposes only */
-$(".hover").mouseleave(
-  function () {
-    $(this).removeClass("hover");
-  }
-);
+//$(".hover").mouseleave(
+//  function () {
+//    $(this).removeClass("hover");
+//  }
+//);
+
+
+//modal bootstrap
+//$('#myModal').modal(options)
+//
+//$('#myModal').on('shown.bs.modal', function () {
+//  $('#myInput').trigger('focus');
+//});
+
+function myModal(modal){
+    modal.style.display = "flex";
+}
