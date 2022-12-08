@@ -497,10 +497,14 @@ section img#krokmou{
 }
 
 .image_dragon{
-    width: 50%;
+    width: 70%;
     margin: 44px 1%;
     transition: transform .1s;
 
+}
+
+.dragon{
+    color: white;
 }
 
 .image_dragon:hover{
@@ -512,6 +516,7 @@ section img#krokmou{
 #listDatas{
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     text-align: center;
 }

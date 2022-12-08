@@ -37,28 +37,16 @@ router.on({
                             node.querySelector('.dragon').innerHTML = data.dragon;
                             node.querySelector(".image_dragon").setAttribute("src", data.image);
                             let btnmodal = node.querySelector('.dragon_click');
-                            document.querySelector(".modal-title").innerHTML = data.dragon;
-//                            let modaldragon = document.querySelector(".modal-body");
-//                            document.querySelector(".modal-body").setAttribute("src", data.image);
-//                            let btnmodalclose = node.querySelector('.dragon_click_close');
-//                        btnmodal.addEventListener('click', function () {
-//                            myModal.show();
-//                        }, false);
-//                        
+                          
+                            //affectation des données dans le modal
                             btnmodal.addEventListener('click', function () {
-                                myModal.show();
                                 
+                                myModal.show();
+                                document.querySelector(".modal-title").innerHTML = data.dragon;
+                                document.querySelector(".dragon_description").innerHTML = data.texte;
+                                document.querySelector(".image_dragon_modal").setAttribute("src", data.image);
                             });
                             
-//                            btnmodalclose.addEventListener('click', function(){
-//                                myModal.hide();
-//                            });
-
-//                        let btnPopup =node.querySelector('.btnPopup');
-//                        let overlay = node.querySelector('.overlay');
-//                        btnPopup.addEventListener('click', function(){
-//                            openModal(overlay);
-//                        });
                             // ajout de la copie du template dans la zone d'affichage des données
                             listDatas.appendChild(node);
                         }
@@ -205,19 +193,7 @@ document.addEventListener('scroll', () => {
     }
     lastScrollValue = top;
 });
-//
-////barre de scroll
-//window.onload = () => {
-//    window.addEventListener("scroll", () => {
-//       let hauteur = document.documentElement.scrollHeight - window.innerHeight;
-//       let position = window.scrollY;
-//       let largeur = document.documentElement.clientWidth;
-//       
-//       let barre = (position / hauteur) * largeur;
-//       
-//       document.getElementById("barre").style.widht = barre + "px";
-//    });
-//};
+
 
 window.addEventListener("DOMContentLoaded", () => {
     const tabs = document.querySelectorAll('[role="tab"]');
@@ -342,23 +318,7 @@ function validateFormOnSubmit(form) {
     xhttp.send(new FormData(form));
 }
 
-
-
-/* Demo purposes only */
-//$(".hover").mouseleave(
-//  function () {
-//    $(this).removeClass("hover");
-//  }
-//);
-
-
-//modal bootstrap
-//$('#myModal').modal(options)
-//
-//$('#myModal').on('shown.bs.modal', function () {
-//  $('#myInput').trigger('focus');
-//});
-
+//function modal page dragons
 function myModal(modal) {
     modal.style.display = "flex";
 }
