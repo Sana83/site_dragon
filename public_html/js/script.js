@@ -37,15 +37,22 @@ router.on({
                             node.querySelector('.dragon').innerHTML = data.dragon;
                             node.querySelector(".image_dragon").setAttribute("src", data.image);
                             let btnmodal = node.querySelector('.dragon_click');
-
+                            document.querySelector(".modal-title").innerHTML = data.dragon;
+//                            let modaldragon = document.querySelector(".modal-body");
+//                            document.querySelector(".modal-body").setAttribute("src", data.image);
+//                            let btnmodalclose = node.querySelector('.dragon_click_close');
 //                        btnmodal.addEventListener('click', function () {
 //                            myModal.show();
 //                        }, false);
 //                        
                             btnmodal.addEventListener('click', function () {
                                 myModal.show();
+                                
                             });
-
+                            
+//                            btnmodalclose.addEventListener('click', function(){
+//                                myModal.hide();
+//                            });
 
 //                        let btnPopup =node.querySelector('.btnPopup');
 //                        let overlay = node.querySelector('.overlay');
