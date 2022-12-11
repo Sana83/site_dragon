@@ -1,5 +1,5 @@
 const urlGoogleSheetDatas = "https://script.google.com/macros/s/AKfycbwci223-ImWEK3y_xrb_O2Q-Es20qBQXbT1B2fxSxT5ZhwXi3eqm0e-Br-nv0CA_ouw5Q/exec";
-const urlGoogleSheetDragon = "https://script.google.com/macros/s/AKfycbyyCNLoBeePOQdIQGfD6Juju1ytGR7K7aMH_tZvYMrD0h_pQB2FbfT1344Nxvp3KDWe3A/exec";
+const urlGoogleSheetDragon = "https://script.google.com/macros/s/AKfycbx9VvhnFkbX462Xh6AMinLYM35rEdeQRRY3FYzodH0A704MmP6G2C5arxstheWwWTuokQ/exec";
 // création d'une instance de la class Navigo
 const router = new Navigo("/");
 
@@ -34,17 +34,18 @@ router.on({
                             //création d'une copie du template
                             let node = template.content.cloneNode(true);
                             //affectation des données dans la copie du template
-                            node.querySelector('.dragon').innerHTML = data.dragon;
-                            node.querySelector(".image_dragon").setAttribute("src", data.image);
+                            node.querySelector('.dragon').innerHTML = data.dragon_principale;
+                            node.querySelector(".image_dragon").setAttribute("src", data.image_dragon_principale);
+//                            node.querySelector(".dragon_attaque").innerHTML = data.dragon_attaque;
                             let btnmodal = node.querySelector('.dragon_click');
                           
                             //affectation des données dans le modal
                             btnmodal.addEventListener('click', function () {
                                 
                                 myModal.show();
-                                document.querySelector(".modal-title").innerHTML = data.dragon;
+                                document.querySelector(".modal-title").innerHTML = data.dragon_principale;
                                 document.querySelector(".dragon_description").innerHTML = data.texte;
-                                document.querySelector(".image_dragon_modal").setAttribute("src", data.image);
+                                document.querySelector(".image_dragon_modal").setAttribute("src", data.image_dragon_principale);
                             });
                             
                             // ajout de la copie du template dans la zone d'affichage des données
@@ -61,15 +62,6 @@ router.on({
             let myModal = new bootstrap.Modal(document.getElementById('myModal'), {
                 keyboard: false
             });
-
-//            document.getElementById('btnmodal').addEventListener('click', function () {
-//                myModal.show();
-//            }, false);
-//            
-//            document.getElementById('btnmodalClose').addEventListener('click', function () {
-//                myModal.hide();
-//            }, false);
-//            
         });
     },
     '/cinematographie': function () {

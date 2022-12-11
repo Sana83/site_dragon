@@ -190,10 +190,10 @@ header nav a:hover{
 
 /*insertion du logo dragon page accueil*/
 .logo_dragon{
-    margin-top: 243px;
-    margin-left: 100px;
+    margin-top: 17%;
+    margin-left: 8%;
     position: relative;
-    z-index:50;
+    z-index: 50;
 }
 
 /*insertion étoiles page accueil*/
@@ -208,8 +208,8 @@ section img#stars{
 /*insertion de la lune page accueil*/
 section img#moon{
     mix-blend-mode: screen;
-    top: 90px;
-    left: 586px;
+    top: 20%;
+    left: 46%;
     height: 100%;
     position: absolute;
     object-fit: cover;
@@ -217,11 +217,10 @@ section img#moon{
 
 /*insertion krokmou page accueil*/
 section img#krokmou{
-    top: 11%;
-    left: 51%;
-    width: 49%;
-    height: 93%;
-    position: absolute;
+    margin-top: 20%;
+    left: 63%;
+    width: 30%;
+    position: relative;
     object-fit: cover;
 }
 
