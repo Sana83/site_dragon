@@ -7,10 +7,35 @@ const router = new Navigo("/");
 router.on({
     '/': function () {
         includePage('home', function () {
+            const btn = document.querySelector('.btn_fleche_haut');
+
+            btn.addEventListener('click', () => {
+
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: "smooth"
+                });
+
+            });
         });
     },
     '/dragons': function () {
         includePage('Page_Dragons', () => {
+
+            const btn = document.querySelector('.btn_fleche_haut');
+
+            btn.addEventListener('click', () => {
+
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: "smooth"
+                });
+
+            });
+
+
             document.getElementById("defaultOpen").click();
 
             // création d'une requête ajax
@@ -26,6 +51,7 @@ router.on({
                         let template = document.getElementById("templateDragons");
                         //récupération de la zone d'affichage des données
                         let listDatas = document.getElementById("listDatas");
+                        let listDatas2 = document.getElementById("listDatas2");
                         //récupération des données
                         let reponse = JSON.parse(this.responseText);
 
@@ -36,18 +62,17 @@ router.on({
                             //affectation des données dans la copie du template
                             node.querySelector('.dragon').innerHTML = data.dragon_principale;
                             node.querySelector(".image_dragon").setAttribute("src", data.image_dragon_principale);
-//                            node.querySelector(".dragon_attaque").innerHTML = data.dragon_attaque;
+
                             let btnmodal = node.querySelector('.dragon_click');
-                          
                             //affectation des données dans le modal
                             btnmodal.addEventListener('click', function () {
-                                
+
                                 myModal.show();
                                 document.querySelector(".modal-title").innerHTML = data.dragon_principale;
                                 document.querySelector(".dragon_description").innerHTML = data.texte;
-                                document.querySelector(".image_dragon_modal").setAttribute("src", data.image_dragon_principale);
+                                document.querySelector(".image_dragon_modal").setAttribute("src", data.image_dragon_principale_modal);
                             });
-                            
+
                             // ajout de la copie du template dans la zone d'affichage des données
                             listDatas.appendChild(node);
                         }
@@ -65,20 +90,35 @@ router.on({
         });
     },
     '/cinematographie': function () {
-        includePage('Page_Cinematographie');
-    },
-    '/personnages': function () {
-        includePage('Page_Personnages');
-    },
-    '/studio': function () {
-        includePage('Page_Studio', () => {
-            let myModal = new bootstrap.Modal(document.getElementById('myModal'), {
-                keyboard: false
+        includePage('Page_Cinematographie', function () {
+            const btn = document.querySelector('.btn_fleche_haut');
+
+            btn.addEventListener('click', () => {
+
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: "smooth"
+                });
+
             });
 
-            document.getElementById('btnmodal').addEventListener('click', function () {
-                myModal.show();
-            }, false);
+        });
+    },
+
+    '/studio': function () {
+        includePage('Page_Studio', function () {
+            const btn = document.querySelector('.btn_fleche_haut');
+
+            btn.addEventListener('click', () => {
+
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: "smooth"
+                });
+
+            });
         });
     },
     '/contact': function () {
@@ -90,44 +130,6 @@ router.on({
                 // envoyer le formulaire
                 validateFormOnSubmit(this);
             });
-        });
-    },
-    '/Page_Dragon_Caracteristiques': function () {
-        includePage('Page_Dragon_Caracteristiques', function () {
-            // création d'une requête ajax
-            xhttp = new XMLHttpRequest();
-            // définition de la fonction de callback
-            xhttp.onreadystatechange = function () {
-                // si la requête est terminée
-                if (this.readyState === 4) {
-                    // si la requête est un succès
-                    if (this.status === 200) {
-                        console.log(JSON.parse(this.responseText));
-                        //récupération du template
-                        let template = document.getElementById("templateDragons");
-                        //récupération de la zone d'affichage des données
-                        let listDatas = document.getElementById("listDatas");
-                        //récupération des données
-                        let reponse = JSON.parse(this.responseText);
-
-                        //pour chaque ligne de données
-                        for (let data of reponse.datas) {
-                            //création d'une copie du template
-                            let node = template.content.cloneNode(true);
-                            //affectation des données dans la copie du template
-                            node.querySelector('h2').innerHTML = data.dragon;
-                            node.querySelector(".image_dragon").setAttribute("src", data.image);
-                            node.querySelector('.colonne3').innerHTML = data.texte;
-                            // ajout de la copie du template dans la zone d'affichage des données
-                            listDatas.appendChild(node);
-                        }
-                    } else {
-                        console.error(this.status, this.responseText);
-                    }
-                }
-            };
-            xhttp.open("GET", urlGoogleSheetDragon, true);
-            xhttp.send();
         });
     }
 });

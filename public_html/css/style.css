@@ -22,9 +22,10 @@ body{
     align-items: center;
     background: black;
     opacity: 0.8;
-    border-top: 20px solid #e44d26;
+    border-top: 5px solid white;
     color: white;
     text-decoration: none;
+    flex-wrap: wrap;
 }
 
 /*blanc du footer et partie texte du footer*/
@@ -128,6 +129,7 @@ header nav a:hover{
 .bouton_footer,
 .reseaux{
     display: flex;
+    flex-wrap: wrap;
 }
 
 /*insertion logo twitter*/
@@ -269,6 +271,9 @@ section img#krokmou{
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -482,6 +487,28 @@ section img#krokmou{
     top: 161%;
 }
 
+/*texte cinematographie page accueil*/
+.texte_cinematographie_accueil{
+    position: absolute;
+    margin-left: 3%;
+    top: 240%;
+}
+
+/*texte dragon page accueil*/
+.texte_dragon_studio{
+    position: absolute;
+    margin-left: 62%;
+    top: 320%;
+}
+
+/*texte dragon page accueil*/
+.texte_personnage_accueil{
+    position: absolute;
+    margin-left: 3%;
+    top: 400%;
+}
+
+
 .titre_accueil{
     position: absolute;
     top: 120%;
@@ -520,3 +547,52 @@ section img#krokmou{
     text-align: center;
 }
 
+
+.svg-wrapper {
+    position: relative;
+    transform: translateY(30%);
+    margin: 0 auto;
+    width: 320px;
+}
+
+
+.shape {
+    height:63%;
+    width:100%;
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 3px;
+    fill: transparent;
+    stroke: #19f6e8;
+    border-bottom: 5px solid black;
+    transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+.text_haut {
+    font-size: 23px;
+    letter-spacing: 9px;
+    color: #fff;
+    top: -51px;
+    margin-left: 29%;
+    position: relative;
+}
+.svg-wrapper:hover .shape {
+    stroke-width: 2px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 760;
+}
+
+.btn_fleche_haut{
+    margin-right: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 0px;
+    bottom: 20px;
+    cursor: pointer;
+    z-index: 50;
+}
+
+.icone_fleche{
+    width: 50px;
+}
