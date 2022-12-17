@@ -18,6 +18,17 @@ router.on({
                 });
 
             });
+
+            window.onload = () => {
+                window.addEventListener("scroll", () => {
+                    let hauteur = document.documentElement.scrollHeight - window.innerHeight;
+                    let position = window.scrollY;
+                    let largeur = document.documentElement.clientWidth;
+
+                    let barre = (position / hauteur) * largeur;
+                    document.getElementById("barre").style.width = barre + "px";
+                });
+            };
         });
     },
     '/dragons': function () {
@@ -120,19 +131,30 @@ router.on({
 
             });
             
-            document.body.onload=function(){
-              nbr=5;
-              p=0;
-              container=document.getElementById("container");
-              g=document.getElementById("g");
-              d=document.getElementById("d");
-              container.style.widht=(800*nbr)+"px";
-              for(i=1;i<=nbr;i++){
-                  div=document.createElement("div");
-                  div.className="photo";
-                  div.style.backgroundImage="url('img/im"+i+".jpg')";
-                  container.appendChild(div);
-              }
+            nbr = 5;
+            p = 0;
+            container = document.getElementById("container");
+            g = document.getElementById("g");
+            d = document.getElementById("d");
+            container.style.width = (800 * nbr) + "px";
+            for (i = 1; i <= nbr; i++) {
+                div = document.createElement("div");
+                div.className = "photo";
+                div.style.backgroundImage = "url('img/im" + i + ".jpg')";
+                container.appendChild(div);
+            }
+            g.onclick = function () {
+                if (p > -nbr + 1)
+                    p--;
+                container.style.transform = "translate(" + p * 800 + "px)";
+                container.style.transition = "all 0.5s ease";
+            };
+
+            d.onclick = function () {
+                if (p < 0)
+                    p++;
+                container.style.transform = "translate(" + p * 800 + "px)";
+                container.style.transition = "all 0.5s ease";
             };
         });
     },
@@ -145,6 +167,11 @@ router.on({
                 // envoyer le formulaire
                 validateFormOnSubmit(this);
             });
+        });
+    },
+
+    '/jeu': function () {
+        includePage('Page_Jeu', function () {
         });
     }
 });
