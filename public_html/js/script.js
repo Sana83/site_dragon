@@ -16,9 +16,9 @@ router.on({
                     left: 0,
                     behavior: "smooth"
                 });
-
             });
 
+            //effet scrool avec la barre du bas au chargement de la page
             window.onload = () => {
                 window.addEventListener("scroll", () => {
                     let hauteur = document.documentElement.scrollHeight - window.innerHeight;
@@ -33,7 +33,8 @@ router.on({
     },
     '/dragons': function () {
         includePage('Page_Dragons', () => {
-
+            
+            //bouton fleche que remonte en haut de la page
             const btn = document.querySelector('.btn_fleche_haut');
 
             btn.addEventListener('click', () => {
@@ -45,9 +46,8 @@ router.on({
                 });
 
             });
-
-
             document.getElementById("defaultOpen").click();
+
 
             // création d'une requête ajax
             xhttp = new XMLHttpRequest();
@@ -94,14 +94,29 @@ router.on({
             };
             xhttp.open("GET", urlGoogleSheetDragon, true);
             xhttp.send();
-
+            
+            //modal boostrap
             let myModal = new bootstrap.Modal(document.getElementById('myModal'), {
                 keyboard: false
             });
+            
+            //effet scrool avec la barre du bas au chargement de la page
+            window.onload = () => {
+                window.addEventListener("scroll", () => {
+                    let hauteur = document.documentElement.scrollHeight - window.innerHeight;
+                    let position = window.scrollY;
+                    let largeur = document.documentElement.clientWidth;
+
+                    let barre = (position / hauteur) * largeur;
+                    document.getElementById("barre").style.width = barre + "px";
+                });
+            };
         });
     },
     '/cinematographie': function () {
         includePage('Page_Cinematographie', function () {
+            
+            //bouton fleche que remonte en haut de la page
             const btn = document.querySelector('.btn_fleche_haut');
 
             btn.addEventListener('click', () => {
@@ -115,14 +130,26 @@ router.on({
             });
 
             document.getElementById("defaultOpen").click();
+            
+            
+            //effet scrool avec la barre du bas au chargement de la page
+            window.onload = () => {
+                window.addEventListener("scroll", () => {
+                    let hauteur = document.documentElement.scrollHeight - window.innerHeight;
+                    let position = window.scrollY;
+                    let largeur = document.documentElement.clientWidth;
 
+                    let barre = (position / hauteur) * largeur;
+                    document.getElementById("barre").style.width = barre + "px";
+                });
+            };
         });
     },
 
     '/studio': function () {
         includePage('Page_Studio', function () {
 
-//            bouton fleche haut
+            //bouton fleche haut
             const btn = document.querySelector('.btn_fleche_haut');
 
             btn.addEventListener('click', () => {
@@ -134,8 +161,10 @@ router.on({
                 });
 
             });
+            
+            
 
-//            image caroussel
+            //image caroussel
             nbr = 5;
             p = 0;
             container = document.getElementById("container");
@@ -162,7 +191,7 @@ router.on({
                 container.style.transition = "all 0.5s ease";
             };
 
-//            effet parallax
+            //effet parallax
             document.addEventListener("mousemove", parallax);
             function parallax(e) {
                 this.querySelectorAll('.layer').forEach(layer => {
@@ -246,7 +275,7 @@ router.on({
             }
             ;
 
-// create random element
+            // create random element
             function virusPop() {
                 let virus = new Image();
 
@@ -272,7 +301,7 @@ router.on({
             }
             ;
 
-// remove element clicked
+            // remove element clicked
             document.addEventListener("click", function (e) {
                 let targetElement = e.target || e.srcElement;
 
@@ -284,7 +313,7 @@ router.on({
                 ;
             });
 
-// countdown on click
+            // countdown on click
             canvas.addEventListener('click', () => {
                 if (daysRemaining > 0) {
                     daysRemaining--;
@@ -292,7 +321,7 @@ router.on({
                 }
             });
 
-// hide screen on click
+            // hide screen on click
             endScreen.addEventListener('click', () => {
                 setTimeout(() => {
                     start();
@@ -440,8 +469,6 @@ function openCity(evt, cityName) {
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
 }
-
-
 
 
 function validateFormOnSubmit(form) {

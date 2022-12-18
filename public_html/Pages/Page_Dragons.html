@@ -1,16 +1,18 @@
 <body>
+    <!--insertion image de haut de page-->
     <img class="image_studio_haut" src="img/Main_Dragons2.png">
 
+    <!--insertion du tableau qui va contenir les dragon et les personnages avec les onglets-->
     <div class="tab">
         <button class="tablinks" onclick="openCity(event, 'Main_Dragons')" id="defaultOpen">Dragons</button>
         <button class="tablinks" onclick="openCity(event, 'Pesonnages')">Personnages</button>
     </div>
 
-    <!-- Tab content -->
+    <!--Contenu des onglets dynamique pour dragons-->
     <div id="Main_Dragons" class="tabcontent">
         <ul>
             <li>
-                <!-- Modal -->
+                <!-- contenu de la modal dynamique -->
                 <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
@@ -36,6 +38,8 @@
                     dressés, ils font aussi généralement partie des dragons les plus puissants. 
                     Les dragons inclus sont :
                 </p>
+
+                <!--template et affichage des éléments dynamique-->
                 <template id="templateDragons">
                     <div class='dragon_click'>
                         <img class="image_dragon">
@@ -47,6 +51,7 @@
         </ul>
     </div>
 
+    <!--onglet personnages-->
     <div id="Personnages" class="tabcontent">
         <ul>
             <li> <p class="description_dragon">Les dragons de classe 
@@ -55,10 +60,13 @@
             </li>
         </ul>
     </div>
-    
+
+    <!--insertion fleche qui permet de revenir en haut-->
     <div class="btn_fleche_haut">
         <img src='fleche_haut.svg' class='icone_fleche'>
     </div>
-    
+
+    <!--insertion barre d'évolution dans la page-->
+    <div id="barre"></div>
 </body>
 </html>

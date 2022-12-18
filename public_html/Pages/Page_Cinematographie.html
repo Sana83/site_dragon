@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
--->
 <html>
     <body>
+        <!--insertion image haut de page-->
         <img class="image_studio_haut" src="img/image_cinematographie_haut.png">
 
-        <div class="titre_film0"><h2>Films</h2></div><!-- comment -->
+        <!--insertion titre films-->
+        <div class="titre_film0"><h2>Films</h2></div>
 
+        <!--insertion image du film avec la bande annonce-->
         <div class="films">
             <div class="film1">
                 <div class="film1_texte">
@@ -33,8 +32,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             </div>
         </div>
 
+        <!--insertion titre serie et jeux-->
         <div class="titre_serie0"><h2>Séries et jeux</h2></div><!-- comment -->
 
+        <!--création des onglets du tableau-->
         <div class="tab">
             <button class="tablinks" onclick="openCity(event, 'cavalier_de_beurk')" id="defaultOpen">Dragons : Cavalier de Beurk</button>
             <button class="tablinks" onclick="openCity(event, 'defenseurs_de_beurk')" id="defaultOpen">Dragons : défenseurs de beurk</button>
@@ -42,7 +43,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             <button class="tablinks" onclick="openCity(event, 'jeux')">Dragons : Jeux vidéo</button>
         </div>
 
-
+        <!--Affichage des éléments dans les onglets-->
         <div id="cavalier_de_beurk" class="tabcontent">
             <h3>Dragon : Cavalier de Beurk</h3>
             <p>Dragons : Cavaliers de Beurk est la première saison de la série d'animation américaine 
@@ -76,9 +77,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             <div class="netflix_titre"><h2>Voir les films et séries sur Netflix</h2></div>
         </div>
 
-
+        <!--insertion titre musique-->
         <div class="titre_musique"><h2>Musiques</h2></div>
 
+        <!--insertion image john powell avec bouton pour la bio-->
         <div class="musique">
             <img class="image_john" src="img/john.jpg">
             <div class="texte_john">
@@ -101,15 +103,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             </div>
         </div>
 
+        <!--insertion de la musique spotify-->
         <div class="musique">
             <iframe class="musique_film1" src="https://open.spotify.com/embed/album/1kTnC045mQqurTQvGMGpmU?utm_source=generator"></iframe>
             <iframe class="musique_film2" src="https://open.spotify.com/embed/album/1VYM3uIZXGJGa7T8jGHG5z?utm_source=generator"></iframe>
             <iframe class="musique_film3" src="https://open.spotify.com/embed/album/2lbH7LYqdX5TzwZSp2pBzq?utm_source=generator"></iframe>
         </div>
 
+        <!--insertion fleche pour revenir en haut de la page-->
         <div class="btn_fleche_haut">
             <img src='fleche_haut.svg' class='icone_fleche'>
         </div>
-
+        
+        <!--insertion barre d'évolution dans la page-->
+        <div id="barre"></div>
     </body>
 </html>
