@@ -119,6 +119,8 @@ router.on({
 
     '/studio': function () {
         includePage('Page_Studio', function () {
+            
+//            bouton fleche haut
             const btn = document.querySelector('.btn_fleche_haut');
 
             btn.addEventListener('click', () => {
@@ -131,6 +133,7 @@ router.on({
 
             });
             
+//            image caroussel
             nbr = 5;
             p = 0;
             container = document.getElementById("container");
@@ -156,6 +159,19 @@ router.on({
                 container.style.transform = "translate(" + p * 800 + "px)";
                 container.style.transition = "all 0.5s ease";
             };
+            
+//            effet parallax
+            document.addEventListener("mousemove", parallax);
+            function parallax(e){
+                this.querySelectorAll('.layer').forEach(layer =>{
+                    const speed = layer.getAttribute('data-speed');
+                    
+                    const x = (window.innerWidth - e.pageX*speed);
+                    const y = (window.innerHeight - e.pageY*speed);
+                    
+                    layer.style.transform = 'translateX(${x}px) translateY(${y}px)';
+                });
+            }
         });
     },
     '/contact': function () {
